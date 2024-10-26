@@ -17,8 +17,8 @@ function humidityComfort(rh, temperature) {
 }
 
 // Route to fetch the last weather data record for a user
-router.get("/api/data/:email", async (req, res) => {
-  const email  = req.params.email;
+router.get("/api/data", async (req, res) => {
+  const {email}  = req.body;
 
   if (!email) {
     return res.status(400).json({ msg: "Email is required to fetch data" });
